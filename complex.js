@@ -3,17 +3,22 @@ var Complex = /** @class */ (function () {
         this.re = re;
         this.im = im;
     }
-    Complex.prototype.add = function (Complex2) {
-        var re = this.re + Complex2, re;
-        var im = this.im + Complex2, im;
-        return new Complex2(re, im);
+    Complex.prototype.add = function (complex) {
+        var re = this.re + complex.re;
+        var im = this.im + complex.im;
+        return new Complex(re, im);
     };
-    Complex.prototype.substract = function (Complex3) {
-        var re = this.re - Complex2, re;
-        var im = this.im - Complex2, im;
-        return new Complex2(re, im);
+    Complex.prototype.substract = function (complex) {
+        var re = this.re - complex.re;
+        var im = this.im - complex.im;
+        return new Complex(re, im);
     };
-    Complex.prototype.toString = function (Complex4) {
+    Complex.prototype.toString = function () {
+        console.log("Re: ", this.re, ", Im: ", this.im);
     };
     return Complex;
 }());
+var obiekt = new Complex(3, 4);
+var obiekt2 = new Complex(6, 7);
+var wynik = obiekt.add(obiekt2);
+wynik.toString();
